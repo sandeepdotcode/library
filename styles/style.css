@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --header-main: #A2D2FF;
+  --header-text: #343F3E;
+  --sidebar-main: #FFC8DD;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 115px;
+  background-color: var(--header-main);
+  color: var(--main-header);
+}
+
+.header-title {
+  margin-left: 10%;
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 52px;
+}
+
+.middle {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.library-display {
+  width: 85%;
+  background-color: var(--main-library);
+}
+
+.sidebar {
+  background-color: var(--sidebar-main);
+  flex-grow: 1;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.creator a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.fa-github {
+  transition: transform 0.3s ease-in-out;
+  font-size: 20px;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* css for the form overlay */
+
+.form-overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9;
+  cursor: pointer;
+}
+
+.form-container {
+  position: absolute;
+  max-width: 300px;
+  padding: 50px;
+  background-color: white;
+  border: 3px solid var(--header-text);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}

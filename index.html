@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/8ced3ac612.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="header-title">Library</div>
+    </header>
+    <div class="middle">
+        <main class="library-display">
+
+        </main>
+        <div class="sidebar">
+            <div class="sidebar-stats">
+
+            </div>
+            <button class="button-add">New Book</button>
+        </div>
+    </div>
+
+    <div class="form-overlay" id="bookForm">
+        <form action="" class="form-container">
+            <h1 class="form-title">Add New Book</h1>
+
+            <label for="title"><b>Title</b></label>
+            <input type="text" placeholder="Title" name="title" required>
+
+            <label for="title"><b>Author</b></label>
+            <input type="text" placeholder="Author" name="author" required>
+
+            <label for="pages"><b>No. of pages</b></label>
+            <input type="number" placeholder="Pages" name="pages" required>
+
+            <label for="title"><b>Have you read the book?</b></label>
+            <input type="checkbox" name="read" required>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <p class="creator">Created by <a href="https://github.com/sandeepdotcode/etch-a-sketch" target="_blank">Sandeep
+                K K <i class="fab fa-github"></i></a>
+        </p>
+    </footer>
 </body>
+
 </html>
