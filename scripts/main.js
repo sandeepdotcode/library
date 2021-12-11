@@ -7,7 +7,16 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(title, author, pages, read) {
+    const tempBook = new Book(title, author, pages, read);
+    myLibrary.push(tempBook);
+}
+
+addBookToLibrary("Subtle Art of Not Giving a Fuck", "Mark Manson", 224, "yes");
+addBookToLibrary("Grokking Algorithms", "Aditya", 256, "no");
+addBookToLibrary("Beautiful World, Where Are You", "Sally Rooney", 250, "no");
+
+function displayBook() {
 
 }
 
