@@ -5,6 +5,17 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;                               // yes or no
+
+    this.changeStatus = function() {
+        if (this.read == 'yes')
+            this.read = 'no';
+        else
+            this.read = 'yes';
+        // function to be implemented
+        // function changes the class name on read button in the DOM node
+        // after checking title and author
+        // toggleReadBtn(this);
+    }
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -37,6 +48,8 @@ function displayBook() {
         readBtn.classList.add((myLibrary[i].read == 'yes') ? 'read-btn' : 'not-read-btn');
         delBtn.textContent = 'Remove';
         delBtn.classList.add('del-btn');
+
+        // readBtn.addEventListener('click', myLibrary[i].changeStatus());
 
         card.appendChild(titleText);
         card.appendChild(authorText);
