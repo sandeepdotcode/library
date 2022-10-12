@@ -7,10 +7,7 @@ function Book(title, author, pages, read) {
     this.read = read;                               // yes or no
 
     this.changeStatus = function() {
-        if (this.read == 'yes')
-            this.read = 'no';
-        else
-            this.read = 'yes';
+        this.read = !this.read;
         // function to be implemented
         // function changes the class name on read button in the DOM node
         // after checking title and author
@@ -23,9 +20,9 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(tempBook);
 }
 
-addBookToLibrary("Subtle Art of Not Giving a Fuck", "Mark Manson", 224, "yes");
-addBookToLibrary("Grokking Algorithms", "Aditya", 256, "no");
-addBookToLibrary("Beautiful World, Where Are You", "Sally Rooney", 250, "no");
+addBookToLibrary("Subtle Art of Not Giving a Fuck", "Mark Manson", 224, true);
+addBookToLibrary("Grokking Algorithms", "Aditya", 256, false);
+addBookToLibrary("Beautiful World, Where Are You", "Sally Rooney", 250, false);
 displayBook();
 
 function displayBook() {
@@ -43,9 +40,9 @@ function displayBook() {
         titleText.textContent = myLibrary[i].title;
         authorText.textContent = myLibrary[i].author;
         pagesText.textContent = myLibrary[i].pages;
-        readBtn.textContent = (myLibrary[i].read == 'yes') ? 'Read' : 'Not Read';
+        readBtn.textContent = (myLibrary[i].read == true) ? 'Read' : 'Not Read';
         // myLibrary[i].read == 'yes' ? readBtn.classList.add('read-btn') : readBtn.classList.add('not-read-btn');
-        readBtn.classList.add((myLibrary[i].read == 'yes') ? 'read-btn' : 'not-read-btn');
+        readBtn.classList.add((myLibrary[i].read == true) ? 'read-btn' : 'not-read-btn');
         delBtn.textContent = 'Remove';
         delBtn.classList.add('del-btn');
 
