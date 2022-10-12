@@ -4,6 +4,11 @@
   --header-main: #A2D2FF;
   --header-text: #343F3E;
   --sidebar-main: #FFC8DD;
+  --card-bg: #e1ecf7;
+  --button-remove: #FFAFCC;
+  --button-read: #A1E8CC;
+  --button-not-read: #FFC8DD;
+  --button-new: 
 }
 
 html {
@@ -48,11 +53,68 @@ body {
 .library-display {
   width: 85%;
   background-color: var(--main-library);
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3%;
 }
+
+.library-display div {
+  width: 200px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px solid black;
+  border-radius: 5%;
+  padding: 10px;
+  background-color: var(--card-bg);
+}
+
+.library-display div h3 {
+  height: 70px;
+}
+
+.library-display div span {
+  height: 25px;
+}
+
+.library-display div button {
+  height: 25px;
+  width: 150px;
+}
+
+.del-btn {
+  background-color: var(--button-remove);
+}
+
+.read-btn {
+  background-color: var(--button-read);
+}
+
+.not-read-btn {
+  background-color: var(--button-not-read);
+}
+
+/* .read-btn.active {
+  background-color: var(--button-read-active);  //changed to  --button-read
+} */
 
 .sidebar {
   background-color: var(--sidebar-main);
   flex-grow: 1;
+}
+
+.button-add {
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--button-new);
 }
 
 .footer {

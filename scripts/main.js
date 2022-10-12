@@ -4,7 +4,7 @@ function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.read = read;                               // yes or no
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -33,7 +33,10 @@ function displayBook() {
         authorText.textContent = myLibrary[i].author;
         pagesText.textContent = myLibrary[i].pages;
         readBtn.textContent = (myLibrary[i].read == 'yes') ? 'Read' : 'Not Read';
+        // myLibrary[i].read == 'yes' ? readBtn.classList.add('read-btn') : readBtn.classList.add('not-read-btn');
+        readBtn.classList.add((myLibrary[i].read == 'yes') ? 'read-btn' : 'not-read-btn');
         delBtn.textContent = 'Remove';
+        delBtn.classList.add('del-btn');
 
         card.appendChild(titleText);
         card.appendChild(authorText);
