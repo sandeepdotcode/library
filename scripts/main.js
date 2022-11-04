@@ -6,7 +6,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;                               // yes or no
 
-    this.changeStatus = function() {
+    this.changeStatus = () => {
         this.read = !this.read;
         // function to be implemented
         // function changes the class name on read button in the DOM node
@@ -20,7 +20,7 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(tempBook);
 }
 
-addBookToLibrary("Subtle Art of Not Giving a Fuck", "Mark Manson", 224, true);
+addBookToLibrary("Subtle Art of Not Giving a F*ck", "Mark Manson", 224, true);
 addBookToLibrary("Grokking Algorithms", "Aditya", 256, false);
 addBookToLibrary("Beautiful World, Where Are You", "Sally Rooney", 250, false);
 displayBook();
@@ -37,6 +37,8 @@ function displayBook() {
         const readBtn = document.createElement('button');
         const delBtn = document.createElement('button');
 
+        const currBook = myLibrary[i];
+
         titleText.textContent = myLibrary[i].title;
         authorText.textContent = myLibrary[i].author;
         pagesText.textContent = myLibrary[i].pages;
@@ -46,7 +48,7 @@ function displayBook() {
         delBtn.textContent = 'Remove';
         delBtn.classList.add('del-btn');
 
-        // readBtn.addEventListener('click', myLibrary[i].changeStatus());
+        readBtn.addEventListener('click', currBook.changeStatus);
 
         card.appendChild(titleText);
         card.appendChild(authorText);
