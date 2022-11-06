@@ -4,15 +4,15 @@ function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;                               // yes or no
+    this.read = read;                               // true or false
+}
 
-    this.changeStatus = () => {
-        this.read = !this.read;
-        // function to be implemented
-        // function changes the class name on read button in the DOM node
-        // after checking title and author
-        // toggleReadBtn(this);
-    }
+Book.prototype.changeStatus = function() {
+    this.read = !this.read;
+    // function to be implemented
+    // function changes the class name on read button in the DOM node
+    // after checking title and author
+    // toggleReadBtn(this);
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -48,7 +48,7 @@ function displayBook() {
         delBtn.textContent = 'Remove';
         delBtn.classList.add('del-btn');
 
-        readBtn.addEventListener('click', currBook.changeStatus);
+        readBtn.addEventListener('click',() => currBook.changeStatus());
 
         card.appendChild(titleText);
         card.appendChild(authorText);
