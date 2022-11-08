@@ -39,16 +39,16 @@ function displayBook() {
 
         const currBook = myLibrary[i];
 
-        titleText.textContent = myLibrary[i].title;
-        authorText.textContent = myLibrary[i].author;
-        pagesText.textContent = myLibrary[i].pages;
-        readBtn.textContent = (myLibrary[i].read == true) ? 'Read' : 'Not Read';
+        titleText.textContent = currBook.title;
+        authorText.textContent = currBook.author;
+        pagesText.textContent = currBook.pages;
+        readBtn.textContent = (currBook.read == true) ? 'Read' : 'Not Read';
         // myLibrary[i].read == 'yes' ? readBtn.classList.add('read-btn') : readBtn.classList.add('not-read-btn');
-        readBtn.classList.add((myLibrary[i].read == true) ? 'read-btn' : 'not-read-btn');
+        readBtn.classList.add((currBook.read == true) ? 'read-btn' : 'not-read-btn');
         delBtn.textContent = 'Remove';
         delBtn.classList.add('del-btn');
 
-        readBtn.addEventListener('click',() => currBook.changeStatus());
+        readBtn.addEventListener('click',currBook.changeStatus.bind(currBook));
 
         card.appendChild(titleText);
         card.appendChild(authorText);
