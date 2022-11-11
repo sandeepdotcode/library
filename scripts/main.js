@@ -13,6 +13,7 @@ Book.prototype.changeStatus = function() {
     // function changes the class name on read button in the DOM node
     // after checking title and author
     // toggleReadBtn(this);
+    // displayBook();
 }
 
 function createBook(title, author, pages, read) {
@@ -58,6 +59,7 @@ function displayBook() {
         delBtn.classList.add('del-btn');
 
         readBtn.addEventListener('click',currBook.changeStatus.bind(currBook));
+        // delBtn.addEventListener('click', )
 
         card.appendChild(titleText);
         card.appendChild(authorText);
@@ -80,7 +82,6 @@ function hideForm() {
 
 function checkBookInLibrary(book) {
     if (myLibrary.length == 0) return false;
-    console.log(book);
     const isInLibrary = myLibrary.some(someBook => (someBook.title === book.title) && (someBook.author === book.author));
     return isInLibrary;
 }
