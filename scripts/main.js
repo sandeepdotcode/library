@@ -15,19 +15,28 @@ Book.prototype.changeStatus = function() {
     // toggleReadBtn(this);
 }
 
-function addBookToLibrary(title, author, pages, read) {
-    const tempBook = new Book(title, author, pages, read);
-    myLibrary.push(tempBook);
+function createBook(title, author, pages, read) {
+    return new Book(title, author, pages, read);
 }
 
-addBookToLibrary("Subtle Art of Not Giving a F*ck", "Mark Manson", 224, true);
-addBookToLibrary("Grokking Algorithms", "Aditya", 256, false);
-addBookToLibrary("Beautiful World, Where Are You", "Sally Rooney", 250, false);
+function addBookToLibrary(book) {
+    if (!checkBookInLibrary(book)) {
+        myLibrary.push(book);
+    }
+    else {
+        console.log("Book is already in Library");
+    }
+}
+
+addBookToLibrary(createBook("Subtle Art of Not Giving a F*ck", "Mark Manson", 224, true));
+addBookToLibrary(createBook("Grokking Algorithms", "Aditya", 256, false));
+addBookToLibrary(createBook("Beautiful World, Where Are You", "Sally Rooney", 250, false));
 displayBook();
 
 function displayBook() {
     const libLen = myLibrary.length;
     const libContainer = document.querySelector('.library-display');
+    libContainer.innerHTML = "";
 
     for (let i = 0; i < libLen; i++) {
         const card = document.createElement('div');
@@ -61,6 +70,7 @@ function displayBook() {
 }
 
 function showForm() {
+    document.getElementById("add-form").reset();
     document.getElementById("bookForm").style.display = "block";
 }
 
@@ -68,6 +78,36 @@ function hideForm() {
     document.getElementById("bookForm").style.display = "none";
 }
 
+function checkBookInLibrary(book) {
+    if (myLibrary.length == 0) return false;
+    console.log(book);
+    const isInLibrary = myLibrary.some(someBook => (someBook.title === book.title) && (someBook.author === book.author));
+    return isInLibrary;
+}
+
+function getBookDetails() {
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = Number(document.getElementById("pages").value);
+    const isRead = document.getElementById("read").checked;
+
+    const book = createBook(title, author, pages, isRead);
+    return book;
+}
+
+function submitForm(event) {
+    event.preventDefault();
+
+    const tempBook = getBookDetails();
+    addBookToLibrary(tempBook);
+
+    displayBook();
+
+    hideForm();
+}
+
 const addBtn = document.querySelector(".button-add");
+const addBookForm = document.querySelector("#add-form");
 
 addBtn.addEventListener("click", showForm);
+addBookForm.addEventListener("submit", submitForm);
