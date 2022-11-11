@@ -50,7 +50,9 @@ function displayBook() {
         const currBook = myLibrary[i];
 
         titleText.textContent = currBook.title;
+        titleText.classList.add('title-text');
         authorText.textContent = currBook.author;
+        authorText.classList.add('author-text');
         pagesText.textContent = currBook.pages;
         readBtn.textContent = (currBook.read == true) ? 'Read' : 'Not Read';
         // myLibrary[i].read == 'yes' ? readBtn.classList.add('read-btn') : readBtn.classList.add('not-read-btn');
@@ -59,7 +61,7 @@ function displayBook() {
         delBtn.classList.add('del-btn');
 
         readBtn.addEventListener('click',currBook.changeStatus.bind(currBook));
-        // delBtn.addEventListener('click', )
+        delBtn.addEventListener('click', removeBook);
 
         card.appendChild(titleText);
         card.appendChild(authorText);
@@ -69,6 +71,18 @@ function displayBook() {
 
         libContainer.appendChild(card);
     }
+}
+
+function removeBook(event) {
+    const card = event.target.parentNode;
+    title = card.querySelector('.title-text').textContent;
+    author = card.querySelector('.author-text').textContent;
+
+    bookIndex = myLibrary.findIndex(book => (book.title === title && book.author === author));
+    myLibrary.splice(bookIndex, 1);
+    
+    const libContainer = document.querySelector('.library-display');
+    libContainer.removeChild(card);
 }
 
 function showForm() {
