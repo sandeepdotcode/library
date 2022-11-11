@@ -13,7 +13,7 @@ Book.prototype.changeStatus = function() {
     // function changes the class name on read button in the DOM node
     // after checking title and author
     // toggleReadBtn(this);
-    // displayBook();
+    displayBook();
 }
 
 function createBook(title, author, pages, read) {
