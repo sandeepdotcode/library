@@ -56,9 +56,10 @@ function displayBook() {
         pagesText.textContent = currBook.pages;
         readBtn.textContent = (currBook.read == true) ? 'Read' : 'Not Read';
         // myLibrary[i].read == 'yes' ? readBtn.classList.add('read-btn') : readBtn.classList.add('not-read-btn');
+        readBtn.classList.add('card-btn');
         readBtn.classList.add((currBook.read == true) ? 'read-btn' : 'not-read-btn');
         delBtn.textContent = 'Remove';
-        delBtn.classList.add('del-btn');
+        delBtn.classList.add('del-btn', 'card-btn');
 
         readBtn.addEventListener('click',currBook.changeStatus.bind(currBook));
         delBtn.addEventListener('click', removeBook);
