@@ -29,9 +29,9 @@ function addBookToLibrary(book) {
     }
 }
 
-addBookToLibrary(createBook("Subtle Art of Not Giving a F*ck", "Mark Manson", 224, true));
-addBookToLibrary(createBook("Grokking Algorithms", "Aditya", 256, false));
-addBookToLibrary(createBook("Beautiful World, Where Are You", "Sally Rooney", 250, false));
+addBookToLibrary(createBook("James and the Giant Peach", "Roald Dahl", 146, true));
+addBookToLibrary(createBook("My Sister's Keeper", "Jodi Picoult", 423, true));
+addBookToLibrary(createBook("A Game of Thrones", "George R.R. Martin", 835, false));
 displayBook();
 
 function displayBook() {
