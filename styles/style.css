@@ -152,7 +152,7 @@ body {
   left: 0;
   background-color: rgba(0,0,0,0.5);
   z-index: 9;
-  cursor: pointer;
+  cursor: default;
 }
 
 .form-container {
@@ -166,4 +166,21 @@ body {
   left: 50%;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+}
+
+.form-title {
+  display: inline-block;
+  right: 100px;
+}
+
+.form-container .close-btn {
+  position: absolute;
+  font-size: 25px;
+  top: 55px;
+  right: 55px;
+  transition: all 200ms;
+}
+
+.form-container .close-btn:hover {
+  color: orange;
 }

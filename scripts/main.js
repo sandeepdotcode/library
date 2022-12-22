@@ -123,6 +123,10 @@ function submitForm(event) {
 
 const addBtn = document.querySelector(".button-add");
 const addBookForm = document.querySelector("#add-form");
+const closeFormBtn = document.querySelector(".close-btn");
 
 addBtn.addEventListener("click", showForm);
+closeFormBtn.addEventListener("click", hideForm);
+
 addBookForm.addEventListener("submit", submitForm);
+
