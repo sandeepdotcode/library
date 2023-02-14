@@ -8,7 +8,7 @@
   --button-remove: #FFAFCC;
   --button-read: #A1E8CC;
   --button-not-read: #FFC8DD;
-  --button-new: 
+  --button-new:  #a75252;
 }
 
 html {
@@ -113,9 +113,21 @@ body {
   background-color: var(--button-read-active);  //changed to  --button-read
 } */
 
+/* Sidebar elements 
+   Sidebar contains stats regarding books & A button to add new books */
+
 .sidebar {
   background-color: var(--sidebar-main);
   flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-stats {
 }
 
 .button-add {
