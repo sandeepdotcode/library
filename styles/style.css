@@ -8,13 +8,12 @@
   --button-remove: #FFAFCC;
   --button-read: #A1E8CC;
   --button-not-read: #FFC8DD;
-  --button-new:  #a75252;
+  --button-new:  #A2D2FF;;
 }
 
 html {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  height: 100%;
 }
 
 *,
@@ -26,7 +25,7 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
