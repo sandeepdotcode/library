@@ -149,6 +149,13 @@ body {
   text-align: center;
   font-weight: 400;
   font-size: 16px;
+
+  display: flex;
+  height: 40px;
+}
+
+.creator {
+  width: 85%;
   padding: 10px 0;
 }
 
@@ -164,6 +171,12 @@ body {
 
 .fa-github:hover {
   transform: rotate(360deg) scale(1.1);
+}
+
+.color-block {
+  background-color: var(--sidebar-main);
+  height: 100%;
+  width: 15%;
 }
 
 /* css for the form overlay */
