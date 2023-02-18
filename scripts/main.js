@@ -1,19 +1,17 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;                               // true or false
-}
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 
-Book.prototype.changeStatus = function() {
-    this.read = !this.read;
-    // function to be implemented
-    // function changes the class name on read button in the DOM node
-    // after checking title and author
-    // toggleReadBtn(this);
-    displayBook();
+    changeStatus() {
+        this.read = !this.read;
+        displayBook();
+    }
 }
 
 function createBook(title, author, pages, read) {
