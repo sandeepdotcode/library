@@ -8,7 +8,7 @@
   --button-remove: #FFAFCC;
   --button-read: #A1E8CC;
   --button-not-read: #FFC8DD;
-  --button-new:  #A2D2FF;;
+  --button-new: #4E4B5C
 }
 
 html {
@@ -132,8 +132,15 @@ body {
 .button-add {
   width: 120px;
   height: 40px;
-  border: none;
+  border: 2px solid var(--button-new);
   border-radius: 6px;
+  background-color: var(--sidebar-main);
+  transition: all 0.5s;
+}
+
+.button-add:hover {
+  transform: scale(1.1);
+  color: var(--sidebar-main);
   background-color: var(--button-new);
 }
 
